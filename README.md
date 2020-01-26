@@ -1,2 +1,2 @@
-# AISDI-projects
-(Warsaw University of Technology) Algorithms and Data Structures in C++
+# Algorithms and Data Structures
+all of my 5 projects for Algorithms and Data Structures on 3rd semester
