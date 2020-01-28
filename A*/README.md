@@ -1,2 +1,2 @@
-**A* (A star) algorithm**
+**A star algorithm**
 Finding shortest path in graph
