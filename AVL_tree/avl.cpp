@@ -216,22 +216,7 @@ Node *root;
         root = node;
         /* zwracanie node bez zmian */
         return node; 
-    } 
-
-    Node* find(const key_type& key) {
-        Node* cur = root;
-        while(cur != nullptr)
-        {
-            if(cur->key == key)
-                return cur->value;
-            if(cur->key > key)
-                cur = cur->left;
-            else
-                cur = cur->right;
-        }
-
-        return -1;
-    } 
+    }  
 
     /*!
      * dodaje wpis do slownika
@@ -289,8 +274,6 @@ Node *root;
 
         return value(key);
     }
-
-
 
     /*!
      * zwraca informacje, czy istnieje w slowniku podany klucz
@@ -354,7 +337,9 @@ int main() {
         i++;
     }
 
-/*    for (int i = 10000; i <= 100000; i+= 10000) {
+    std::cout << "wstawianie" << std::endl;    
+
+    for (int i = 10000; i <= 100000; i+= 10000) {
         TreeMap<string, int> slownikDrzewo;
         Benchmark<> ben = new Benchmark<>(true);
         for(int j = 0; j<i; ++j)
@@ -367,18 +352,22 @@ int main() {
 
 
         std::cout << std::endl;
-    }*/
+    }
 
-   for (int i = 10000; i <= 100000; i+= 10000) {
+    std::cout << "wyszukiwanie" << std::endl; 
+
+    for (int i = 10000; i <= 100000; i+= 10000) {
         TreeMap<string, int> slownikDrzewo;
         Benchmark<> ben = new Benchmark<>(true);
-        auto found = slownikDrzewo.find(&i);
+        for(int j = 0; j<i; ++j)
+            slownikDrzewo.contains(slownik[i]);
 
         map<string, int> slownikMapa;
         Benchmark<> ben2 = new Benchmark<>(true);
-        auto foundmap = slownikMapa.find(i);
+        for(int j = 0; j<i; ++j)
+            slownikMapa.find(slownik[i]);
 
-        
+
         std::cout << std::endl;
     }
 
